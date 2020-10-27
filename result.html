@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0, user-scalable=no">
+    <title>罐头实验报告</title>
+    <script language="JavaScript" type="text/javascript" src="main.js"></script>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Noto+Sans+SC:100,300,400,500,700,900">
+    <style>
+        body {
+            background-color: #E9AE4C;
+        }
+        p {
+            line-height: 1.2;
+        }
+        .content {
+            height: 84vh;
+        }
+    </style>
+</head>
+<body>
+    <div class="content">
+        <div id="machine">
+            <div class="overlay" onclick="extraTransit()"></div>
+            <img src="assets/SVG/p9/p9_can_top.svg" alt="上面的扭蛋"
+                 style="transform: scale(0.53); z-index: 5; left: -4vw; top: 6vh;"/>
+            <img src="assets/SVG/p9/p9_can_right.svg" alt="右边的扭蛋"
+                 style="transform: scale(0.37); z-index: 4; top: 19vh; left: 9vw;"/>
+            <img src="assets/SVG/p9/p9_can_bottom.svg" alt="底部的扭蛋"
+                 style="transform: scale(0.32); z-index: 3; left: -12vw; top: 18vh;"/>
+            <img src="assets/SVG/p9/machine.svg" alt="扭蛋机"
+                 style="transform: scale(1.05); top: -1vh; left: 15vw; z-index: -1;"/>
+        </div>
+        <div id="report" class="--hide" style="overflow-y: scroll; overflow-x: hidden;">
+            <h1 style="letter-spacing: 2px; line-height: 1.15;">艺术<br />体质报告</h1>
+            <hr>
+            <div style="padding: 3vh 0 3vh 10vw; position: relative">
+                <h1 class="title topleft-iso" style="color: #fc356e; z-index: 5"></h1>
+                <h1 class="title topleft-iso"
+                    style="color: #fc7888; z-index: 4; position: absolute; top: 2.75vh;"></h1>
+                <h1 class="title topleft-iso"
+                    style="color: #ffdfc5; z-index: 3; position: absolute; top: 3.25vh;"></h1>
+            </div>
+            <div>
+                <h2>实验体特征</h2>
+                <hr>
+                <p style="text-align: justify; line-height: 2.0;" id="description"></p>
+            </div>
+            <div style="margin-bottom: 10vh">
+                <p style="padding-top: 1.5vh">推荐服用</p>
+                <hr>
+            </div>
+            <div style="display: flex; justify-content: space-between; padding: 2vh 1vw;">
+                <img src="assets/SVG/p9/p9_logo.svg" style="max-height: 4vh; z-index: 1"/>
+                <p style="justify-content: space-between;">#罐头艺术<br />实验室</p>
+            </div>
+
+            <div style="padding: 2vh 0">
+                <p>分享让艺术走进更多人的生活</p>
+                <hr>
+            </div>
+            <p style="text-align: center">
+                <a href="index.html" style="border-bottom: 1px solid black;">
+                    重新来一趟旅程，寻找彩蛋</a>
+            </p>
+        </div>
+    </div>
+</body>
+
+<script>
+    var Title = document.getElementsByClassName('title');
+    var Description = document.getElementById('description');
+    var Machine = document.getElementById('machine');
+    var Report = document.getElementById('report');
+    var Body = document.getElementsByTagName('body')[0];
+
+    var Type;
+    var Link;
+
+    window.onload = function() {
+        if(!isMobile) {
+            window.location.href = 'index.html';
+        }
+
+        if (localStorage.hasOwnProperty('result')) {
+            Type = localStorage.getItem('result');
+        } else {
+            window.location.href = 'index.html';
+        }
+
+        switch (Type) {
+            case 'INT':
+                Array.prototype.forEach.call(Title, item => item.innerHTML = '学问<br/>探求家');
+                Description.innerText = '懂得享受着独自一人观览时间的你，有着敏捷的洞察力，分析着不同作品中的内涵，总是渴望完全理解明白那些吸引你的作品。';
+                Link = 'https://mp.weixin.qq.com/s/4BOpklaALdOMLojz2SCMzw';
+                break;
+            case 'ENT':
+                Array.prototype.forEach.call(Title, item => item.innerHTML = '博览<br/>思想家');
+                Description.innerText = '富有好奇心的你总是有很多想法，打破成规让你收获更多乐趣，你欣赏的作品专于广度，不限单一风格，只要优秀的都喜欢。';
+                Link = 'https://mp.weixin.qq.com/s/3rRlnp4aKnNIUbCt3irMjg';
+                break;
+            case 'INF':
+                Array.prototype.forEach.call(Title, item => item.innerHTML = '神秘<br/>想像家');
+                Description.innerText = '理解力强的你容易把自己投射到作品中，找到明白你内在世界的同伴，一起探索交流作品的深层意义是一件生活中幸运的事。';
+                Link = 'https://mp.weixin.qq.com/s/JDzXpRdaW34GX_UPAwv9Uw';
+                break;
+            case 'ENF':
+                Array.prototype.forEach.call(Title, item => item.innerHTML = '阳光<br/>创造者');
+                Description.innerText = '你重视人内心的价值，喜欢和其他人讨论或通过艺术方式表达，那份对满载想像力作品的热衷，温暖感染身边的人。';
+                Link = 'https://mp.weixin.qq.com/s/s8h2S6bXyBaiFTtY0jxaqA';
+                break;
+            case 'ISJ':
+                Array.prototype.forEach.call(Title, item => item.innerHTML = '稳重<br/>鉴赏员');
+                Description.innerText = '务实的你对细腻的古典作品更有兴趣，耐心欣赏的时候，一个人安静的思考让你感到轻松稳定，令内心得到休息。';
+                Link = 'https://mp.weixin.qq.com/s/1W6qV236OpOqgxX3Do4OIw';
+                break;
+            case 'ESJ':
+                Array.prototype.forEach.call(Title, item => item.innerHTML = '仔细<br/>计划家');
+                Description.innerText = '你会把注意力放在细节上，感受作品当中严谨的层次，井井有条的你有感兴趣的活动时会早早计划，和小伙伴一同去参与。';
+                Link = 'https://mp.weixin.qq.com/s/qttpX0Q4gxzufm8LGPd2_Q';
+                break;
+            case 'ISP':
+                Array.prototype.forEach.call(Title, item => item.innerHTML = '创意<br/>探险家');
+                Description.innerText = '相比起抽象更关注以具象形式表现的作品，因为你喜欢探险和新事物，会尝试用全新的角度去观赏作品，寻找更多可能。';
+                Link = 'https://mp.weixin.qq.com/s/PSc-_fgyBXedpXRzEG66zw';
+                break;
+            case 'ESP':
+                Array.prototype.forEach.call(Title, item => item.innerHTML = '天生<br/>表演者');
+                Description.innerText = '精力充沛的你有着很强的艺术鉴赏和创作力，总喜欢即兴去看作品，即使是作品延伸的周边故事，亦会感到兴味盎然。';
+                Link = 'https://mp.weixin.qq.com/s/JriPkQQwUg7N0QcPi97u2w';
+                break;
+            case 'extra':
+                Array.prototype.forEach.call(Title, item => item.innerHTML = '生活<br/>创作家');
+                Description.innerText = '其实艺术就在我们的生活中，每处也是你创作的舞台，只要细心看，哪里都是发挥的空间，撕开那些标签去寻找你独一无二的艺术吧！';
+                Link = 'https://mp.weixin.qq.com/s/Rb8ny8V1FgC9_mbWUWnWVQ';
+                break;
+        }
+    };
+
+    function extraTransit() {
+        Body.style.backgroundImage = 'url(\'assets/p9_bg.png\')';
+        Body.style.backgroundRepeat = 'no-repeat';
+        Body.style.backgroundPosition = 'center';
+        Body.style.backgroundSize = 'cover';
+        Body.style.overflowY = 'scroll';
+        transition(Machine, Report);
+    }
+</script>
+</html>

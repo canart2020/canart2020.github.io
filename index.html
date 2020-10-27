@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0, user-scalable=no">
+    <title>罐头艺术实验室</title>
+    <script language="JavaScript" type="text/javascript" src="main.js"></script>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Noto+Sans+SC:100,300,400,500,700,900">
+    <style>
+        body {
+            background-color: #8FBDF2;
+        }
+    </style>
+</head>
+<body>
+    <div class="content">
+        <div id="desktop">
+            Please use your phone to finish the test :)
+        </div>
+
+        <div id="mobile">
+            <!--<p>被疫情困在家裡的你 最近還好嗎？<br/>-->
+                <!--在家放空的日子又過一天<br/>-->
+                <!--總是想改變日復一日的作息 卻哪裡也去不了<br/>-->
+                <!--那麼、要到「罐頭藝術實驗室」來一趟輕鬆文創旅程嗎？</p>-->
+            <div id="p0">
+                <div class="overlay" onclick="transition(Mobile, Page[1], 1)"></div>
+                <!--<div class="overlay" onclick="transition(Mobile, Page[8], 8)"></div>-->
+                <div>
+                    <h1>罐头<br/>艺术实验室——</h1>
+                    <h5 style="padding-top: 1vh;">
+                        检测你天生的<br/>艺术家形态
+                    </h5>
+                </div>
+                <img src="assets/SVG/lab.svg" alt="罐头实验室"
+                     style="position: fixed; transform: scale(1.3); left: -3%; top: 31%;"/>
+                <div style="text-align: center; padding: 5px 0;">
+                    <p>点击开始 展开旅途</p>
+                    <h5 style="font-weight: 900;">
+                        你果然天生就是个艺术家吗？
+                    </h5>
+                </div>
+            </div>
+        </div>
+
+        <div id="p1" class="--hide">
+            <h2>这趟旅程目的地是个<br/>文创艺术节</h2>
+            <h1>1. 首先来选定参与<br/>的形式吧！</h1>
+
+            <div class="answer" onclick="question1('A')" style="height: 45vh; left: 30%;">
+                <h1 class="right-iso" style="top: 10vh; left: 11vw;">
+                    A. 网上<br/>平台
+                </h1>
+                <img src="assets/p1_labtop.png" alt="A. 网上平台" style="max-height: 100%;"/>
+            </div>
+            <div class="answer" onclick="question1('B')" style="top: -7vh; left: -17%;">
+                <h1 class="topleft-iso" style="top: 5vh; left: 20vw;">
+                    B. 线下参与
+                </h1>
+                <img src="assets/SVG/p1_book.svg" alt="B. 线下参与" style="transform: scale(1.2);"/>
+            </div>
+        </div>
+
+        <div id="p2n3">
+            <div id="p2" class="--hide">
+                <h2>到达目的地了~</h2>
+                <h1>2. 今天要来看<br/>哪种风格的作品<br/>好呢?</h1>
+                <img src="assets/SVG/p2,%20p3/p3_deco.svg" alt="门票"
+                     style="position: absolute; display: flex; right: -115vw; margin-top: 1vh; max-height: 20vh;"/>
+
+                <!--   ANSWER   -->
+                <div style="position: relative;">
+                    <div class="answer" onclick="question2('D');" style="top: 3vh; left: -25vw;">
+                        <h2 class="topleft-iso" style="left: 32vw; top: 7vh;">
+                            新旧<br/>年代展</h2>
+                        <img src="assets/SVG/p2,%20p3/p2_ansD.svg" alt="新旧年代展" />
+                    </div>
+                    <div class="answer" onclick="question2('C');" style="top: -12vh; left: 20vw;">
+                        <h2 class="topright-iso" style="top: 11vh; left: 34vw;">
+                            主题<br/>联展</h2>
+                        <img src="assets/SVG/p2,%20p3/p2_ansC.svg" alt="主题联展" />
+                    </div>
+                    <div class="answer" onclick="question2('B');" style="top: -26vh; left: -23vw;">
+                        <h2 class="topright-iso" style="text-align: right; top: 6vh; right: 26vw;">
+                            现代<br/>艺术展</h2>
+                        <img src="assets/SVG/p2,%20p3/p2_ansB.svg" alt="现代艺术展" />
+                    </div>
+                    <div class="answer" onclick="question2('A');" style="top: -37vh; left: 15vw;">
+                        <h2 class="topleft-iso" style="left: 21vw; top: 10vh;">
+                            古典大师展览</h2>
+                        <img src="assets/SVG/p2,%20p3/p2_ansA.svg" alt="古典大师展览" />
+                    </div>
+                </div>
+            </div>
+
+            <div id="p3" class="--hide">
+                <h1>3. 现在<br/>再选一个最感兴趣<br/>的展览主题吧～</h1>
+
+                <div class="answer" style="top: 1vh; right: -15vw;">
+                    <div class="topright-iso onclick-area" onclick="question3('A');"></div>
+                    <h2 class="topright-iso" style=" top: 9vh; left: 9vw;">
+                        A.【深渊】——<br/>凝视黑暗，黑暗亦在凝望你
+                    </h2>
+                    <img src="assets/SVG/p2,%20p3/p3_ansA.svg" alt="A.【深渊】" />
+                </div>
+                <div class="answer" style="left: -16vw;">
+                    <div class="topright-iso onclick-area" onclick="question3('B');"></div>
+                    <h2 class="topright-iso" style="top: 9.5vh; left: 11vw; color: #473015">
+                        B.【我们从何而来？<br/>又往何处去？】人文展
+                    </h2>
+                    <img src="assets/SVG/p2,%20p3/p3_ansB.svg" alt="B.【我们从何而来？又往何处去？】" />
+                </div>
+                <div class="answer" style="top: -23vh; right: -22vw;">
+                    <div class="topright-iso onclick-area" onclick="question3('C');"></div>
+                    <h2 class="topright-iso" style="top: 10vh; left: 12vw; color: #e9b359">
+                        C.【今生缘份】——<br/>像是曾在哪里见过你
+                    </h2>
+                    <img src="assets/SVG/p2,%20p3/p3_ansC.svg" alt="C.【今生缘份】" />
+                </div>
+                <div class="answer" style="bottom: 26vh; left: -2vw;">
+                    <div class="topright-iso onclick-area" onclick="question3('D');"></div>
+                    <h2 class="topright-iso" style="bottom: 9vh; left: 10vw; color: #dddddd">
+                        D.【奇幻梦】——<br/>徘徊于现实和梦境边缘
+                    </h2>
+                    <img src="assets/SVG/p2,%20p3/p3_ansD.svg" alt="D.【奇幻梦】" />
+                </div>
+            </div>
+        </div>
+
+        <div id="p4" class="--hide">
+            <h2>开始观看了！</h2>
+            <h1>4. 参观顺序<br/>要从哪里开始<br/>看起好呢？</h1>
+
+            <div class="answer" onclick="question4('A');" style="top: 25vh; right: 0;">
+                <h5>A. 顺序什么的<br/>不太重要啦</h5>
+                <div class="vl-left"></div>
+            </div>
+            <div class="answer" onclick="question4('B');" style="top: 35vh; left: 6vw;">
+                <h5>B. 依展览顺序<br/>从一开始完整地看</h5>
+                <div class="vl-left"></div>
+            </div>
+            <div class="answer" onclick="question4('C');" style="bottom: 4vh; left: -20px;">
+                <div class="vl-right"></div>
+                <h5 style="text-align: right">C. 就按已经笔记好<br/>的计划那样看</h5>
+            </div>
+            <div class="answer" onclick="question4('D');" style="bottom: -5px; right: -15px;">
+                <div class="vl-left"></div>
+                <h5>D. 果然是要从最喜欢<br/>的部分开始看起</h5>
+            </div>
+            <img src="assets/SVG/p4_book.svg" alt="地图"
+                 style="transform: scale(1.55); padding: 21vh 11vh;"/>
+        </div>
+
+        <div id="p5" class="--hide">
+            <h2>映入眼帘</h2>
+            <h1>5. 你更喜欢<br/>的一幅是⋯⋯</h1>
+            <div class="answer" onclick="question5('A');" style="top: 10vh; right: -12vw;">
+                <img src="assets/SVG/p5_pics2.svg" alt="" style="transform: scale(1.3)"/>
+            </div>
+            <div class="answer" onclick="question5('B');" style="bottom: -12vh; left: -8vw;">
+                <img src="assets/SVG/p5_pics1.svg" alt="" style="transform: scale(1.3)"/>
+            </div>
+        </div>
+
+        <div id="p6" class="--hide">
+            <h1>6. 还是觉得<br />这幅更好呢？<br />（疑惑脸）</h1>
+            <div class="answer" onclick="question6('A');" style="top: 30vh; right: 12vw;">
+                <img src="assets/SVG/p6_pics2.svg" alt="" style="transform: scale(1.3)"/>
+            </div>
+            <div class="answer" onclick="question6('B');" style="bottom: 20vh; left: 8vw;">
+                <img src="assets/SVG/p6_pics1.svg" alt="" style="transform: scale(1.3)"/>
+            </div>
+        </div>
+
+        <div id="p7" class="--hide">
+            <h1>7. 看完展览后<br/>脑海冒出了很多<br/>
+                新想法时，<br/>你会…</h1>
+
+            <div class="answer" style="top: 15vh; left: -3vw;">
+                <div style="position: absolute; top: -7vh;">
+                    <h5 onclick="question7('B');">B. 在气氛热烈的留言区<br/>和大家交流一下</h5>
+                    <!--和其他一同参观的人交流讨论一下-->
+                    <div class="vl-left" style="margin-left: 22vw;"></div>
+                </div>
+                <img src="assets/SVG/p7_post.svg" alt="发文" style="transform: scale(0.7); left: -20vw;"/>
+                <div style="position: absolute; top: 18vh;">
+                    <div class="vl-left" style="margin-left: 8vw;"></div>
+                    <h5 onclick="question7('D');">D. 当然要发文分享<br/>让大家生活里<br/>都充满艺术</h5>
+                </div>
+            </div>
+            <div class="answer" style="top: -30vh; right: -5vw;">
+                <div>
+                    <h5 onclick="question7('C');">C. 比起谈自己的<br/>更想听别人<br/>新奇的想法</h5>
+                    <div class="vl-right" style="margin-right: 5vw;"></div>
+                </div>
+                <img src="assets/SVG/p7_chat.svg" alt="留言区"
+                     style="top: -12vh; max-height: 28vh; right: -20vw;"/>
+            </div>
+            <div class="answer" style="bottom: 47vh; right: -10vw;">
+                <img src="assets/SVG/p7_note.svg" alt="笔记本" style="transform: scale(0.7)"/>
+                <div style="position: absolute; bottom: -4vh; right: 12vw;">
+                    <div class="vl-left" style="margin-left: 15vw;"></div>
+                    <h5 onclick="question7('A');" >A. 把想法和心得<br/>写在笔记本里</h5>
+                </div>
+            </div>
+        </div>
+
+        <div id="p8" class="--hide">
+            <h1>8. 旅程來到尾声了，带走哪款纪念品呢？</h1>
+
+            <div class="answer" style="top: 3vh; right: -8vw;">
+                <div class="right-iso onclick-area" onclick="question8('A');"></div>
+                <img src="assets/SVG/p8_bag.svg" alt="单肩帆布袋" style="max-height: 34vh;"/>
+            </div>
+            <div class="answer" style="left: -27vw; top: -10vh;">
+                <div class="onclick-area" onclick="question8('D');"
+                     style="position: absolute; top: 5%; height: 90%;"></div>
+                <img src="assets/SVG/p8_can.svg" alt="罐头" style="max-height: 19vh;"/>
+            </div>
+            <div class="answer" style="left: -18vw; bottom: 8vh;">
+                <div class="topright-iso onclick-area" onclick="question8('B');"></div>
+                <img src="assets/SVG/p8_case.svg" alt="手机壳" style="max-height: 15vh;"/>
+            </div>
+            <div class="answer" style="bottom: 35vh; right: -30vw;">
+                <div class="topright-iso onclick-area" onclick="question8('C');"
+                     style="top: 5%; height: 90%;"></div>
+                <img src="assets/SVG/p8_paint.svg" alt="画作" style="max-height: 20vh;"/>
+            </div>
+        </div>
+
+        <div id="analyse" class="--hide">
+            <p>艺术家形态检测完成！罐头实验报告生成中⋯⋯<br />
+                <br />
+                罐头艺术是一个全球精品艺术衍生社区<br />
+                我们相信Everyone Can Art，每个人都是天生艺术家<br />
+                所以希望把艺术简单轻松地带进每个人的生活里<br />
+                每日艺罐、罐头艺术周报⋯⋯每天都有一罐艺术小知识让你打包带走<br />
+                <br />
+                想要了解更多？现在就来领取你的检测结果吧<br />
+                期待下趟艺术旅程继续有你和我们一起走过
+            </p>
+            <a href="result.html">点击以查看实验报告</a>
+        </div>
+
+        <p>
+            <!--FOOT NOTE-->
+        </p>
+    </div>
+</body>
+
+<script>
+    var Desktop = document.getElementById('desktop');
+    var Mobile = document.getElementById('mobile');
+    var Analyse = document.getElementById('analyse');
+    var Page2n3 = document.getElementById('p2n3');
+    var Page = new Array(9);
+
+    var ColorList = ['#8FBDF2', '#1D65F7', '#60718e', '', '#2E446B', '#c5cbd5', '', '#6d6358', '#807c79'];
+
+    /* * * * * * * * * * * * *
+        RESULT VARIABLES
+     * * * * * * * * * * * * */
+    var charI, charE, charS, charN, TorF, JorP;
+    charI = charE = charS = charN = 0;
+    var FinalResult = '';
+
+    window.onload = function() {
+        if(isMobile) {
+            Desktop.classList.add('--hide');
+        } else {
+            Mobile.classList.add('--hide');
+        }
+        //  INITIALIZING ELEMENT OBJECT
+        for (var i = 1; i <= 8; i++) {
+            Page[i] = document.getElementById('p' + i.toString());
+        }
+    };
+
+    function choosingPic() {
+
+    }
+    function findingResult() {
+        if(FinalResult !== 'extra') {
+            if(charI > charE) {
+                FinalResult += 'I'
+            } else FinalResult += 'E';
+            if(charS > charN) {
+                FinalResult += 'S' + JorP
+            } else FinalResult += 'N' + TorF;
+        }
+        console.log(FinalResult);
+        localStorage.setItem("result", FinalResult);
+    }
+
+    /* * * * * * * * * * * * *
+        QUESTIONS LOGIC
+     * * * * * * * * * * * * */
+    function question1(ans) {
+        switch (ans) {
+            case 'A': charI += 1; break;
+            case 'B': charE += 1; break;
+        }
+        console.log(ans, charI, charE, charS, charN, TorF, JorP);
+        transition(Page[1], Page[2], 2)
+    }
+    function question2(ans) {
+        switch (ans) {
+            case 'A':
+            case 'B': charS += 1; break;
+            case 'C':
+            case 'D': charN += 1; break;
+        }
+        console.log(ans, charI, charE, charS, charN, TorF, JorP);
+        transition(Page[2], Page[3])
+    }
+    function question3(ans) {
+        switch (ans) {
+            case 'A': charE += 1; TorF = 'T'; break;
+            case 'B': charI += 1; TorF = 'T'; break;
+            case 'C': charE += 1; TorF = 'F'; break;
+            case 'D': charI += 1; TorF = 'F'; break;
+        }
+        console.log(ans, charI, charE, charS, charN, TorF, JorP);
+        transition(Page[3], Page[4], 4)
+    }
+    function question4(ans) {
+        switch (ans) {
+            case 'A':
+            case 'D': JorP = 'P'; break;
+            case 'B':
+            case 'C': JorP = 'J'; break;
+        }
+        console.log(ans, charI, charE, charS, charN, TorF, JorP);
+        transition(Page[4], Page[5], 5)
+    }
+    function question5(ans) {
+        switch (ans) {
+            case 'A': charS += 1; break;
+            case 'B': charN += 1; break;
+        }
+        console.log(ans, charI, charE, charS, charN, TorF, JorP);
+        transition(Page[5], Page[6])
+    }
+    function question6(ans) {
+        switch (ans) {
+            case 'A': charS += 1; break;
+            case 'B': charN += 1; break;
+        }
+        console.log(ans, charI, charE, charS, charN, TorF, JorP);
+        transition(Page[6], Page[7], 7)
+    }
+    function question7(ans) {
+        switch (ans) {
+            case 'A':
+            case 'C': charI += 1; break;
+            case 'B':
+            case 'D': charE += 1; break;
+        }
+        console.log(ans, charI, charE, charS, charN, TorF, JorP);
+        transition(Page[7], Page[8], 8)
+    }
+    function question8(ans) {
+        switch (ans) {
+            case 'D': FinalResult = 'extra'; break;
+            default: break;
+        }
+        transition(Page[8], Analyse);
+        findingResult();
+    }
+
+</script>
+</html>

@@ -1,0 +1,231 @@
+// **************************
+//  COLOR
+// **************************
+
+$title0: #FFFFFF;
+$title1: #ECEBE5;
+$title5: #352e26;
+$answer1: #3E3A39;
+$answer3A: #f8f8f8;
+$answer4: #C5CBD5;
+$answer7: #e2ded3;
+$report-bg: #ebcd98;
+
+// **************************
+//  Z-INDEX
+// **************************
+
+$svg: -1;
+$clickarea: 3;
+$overlay: 5;
+
+// **************************
+//  LIST:
+//  1. Desktop
+//  2. Mobile
+//  3. Page 1
+// **************************
+
+h1, h2, h5, p {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+a {
+  text-decoration: none;
+  color: black;
+}
+html, body {
+  overflow: hidden; //  FIX VIEWPORT
+}
+
+// **************************
+//  Common Setting
+// **************************
+
+body {
+  font-family: 'Noto Sans SC', sans-serif;
+  margin: 0;
+}
+.content {
+  padding: 8vh 13vw;
+}
+.--hide {
+  //
+  //  PROBLEM OF TRANSITION ANIMATION
+  //
+  display: none;
+  //opacity: 0;
+  //height: 0;
+}
+
+//  TITLE
+h1 {
+  font-size: 32px;
+  font-weight: 900;
+  line-height: 1.25;
+}
+//  CONDITION
+h2 {
+  font-size: 20px;
+  font-weight: 900;
+  line-height: 1.2;
+}
+h5 {
+  font-size: 15px;
+  font-weight: 400;
+  line-height: 1.7;
+}
+p {
+  font-size: 12px;
+}
+
+//  CLASS SETTING
+.answer {
+  position: relative;
+}
+.onclick-area {
+  top: 25%;
+  left: 5%;
+  height: 50%;
+  width: 90%;
+  z-index: $clickarea;
+}
+
+//  Z - INDEX
+img { //  keep svg at the back
+  position: relative;
+  z-index: $svg;
+}
+.overlay {
+  position: fixed;
+  height: 100vh;
+  width: 100vw;
+  top: 0;
+  right: 0;
+  z-index: $overlay;
+}
+
+//  ISOMETRIC
+.topright-iso, .topleft-iso, .right-iso {
+  position: absolute;
+}
+.topright-iso {
+  transform: rotate(-30deg) skew(30deg);
+}
+.topleft-iso {
+  transform: rotate(30deg) skew(-30deg);
+}
+.right-iso {
+  transform: skew(0, -30deg);
+}
+
+//  LINE
+.vl-left, .vl-right {
+  height: 105px;
+  margin: 7px;
+}
+.vl-left {
+  border-left: 1px solid $answer4;
+}
+.vl-right {
+  border-right: 1px solid $answer4;
+}
+hr {
+  border: none;
+  height: 1px;
+  background-color: black;
+}
+
+// **************************
+//  Different Page
+// **************************
+
+//  COMMON
+#p0, #p2, #p3, #p4, #p5 {
+  height: 84vh;
+}
+#p1, #p2, #p3, #p4, #p7, #p8, #analyse {
+  color: $title1;
+}
+#p5, #p6 {
+  color: $title5;
+}
+#p0, #p2, #p4 {
+  position: relative;
+}
+
+//  SEPARATE
+#p0 {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  color: $title0;
+}
+#p1 {
+  //transition: .6s;
+  .answer {
+    color: $answer1;
+    h1 {
+      letter-spacing: -1px;
+      line-height: 1.2;
+    }
+  }
+}
+#p2 .answer {
+  color: white;
+  img {
+    transform: scale(0.75);
+  }
+}
+#p3 h2 {
+  font-size: 17px;
+}
+#p4 .answer {
+  position: absolute;
+  color: $answer4;
+  h5 {
+    line-height: 1.2;
+  }
+}
+#p7 .answer {
+  color: $answer7;
+  & >div {
+    z-index: $clickarea;
+  }
+  h5 {
+    line-height: 1.2;
+    text-align: right;
+  }
+  .vl-left, .vl-right {
+    border-color: $answer7;
+    height: 70px;
+  }
+}
+
+#p8 .onclick-area {
+  top: 15%;
+  left: 25%;
+  height: 75%;
+  width: 50%;
+}
+
+#machine img{
+  position: absolute;
+}
+#report {
+  border: 1px solid black;
+  background-color: $report-bg;
+  margin: 8%;
+  padding: 12%;
+  h1 {
+    font-size: 35px;
+    position: relative;
+  }
+  h2, p {
+    font-weight: 700;
+  }
+}
+
+// **************************
+//  ANIMATION
+// **************************
