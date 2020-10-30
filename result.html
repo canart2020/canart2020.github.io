@@ -48,15 +48,15 @@
                 <p style="text-align: justify; line-height: 2.0;" id="description"></p>
             </div>
             <div style="margin-bottom: 10vh">
-                <p style="padding-top: 1.5vh">推荐服用</p>
+                <p style="padding-top: 5vh">推荐服用</p>
                 <hr>
+                <p style="text-align: justify; line-height: 2.0;" id="recommend"></p>
             </div>
             <div style="display: flex; justify-content: space-between; padding: 2vh 1vw;">
-                <img src="assets/SVG/p9/p9_logo.svg" style="max-height: 4vh; z-index: 1"/>
-                <p style="justify-content: space-between;">#罐头艺术<br />实验室</p>
+                <img src="assets/httpstest.png" style="max-height: 12vh; margin: 0 auto; z-index: 1"/>
             </div>
 
-            <div style="padding: 2vh 0">
+            <div style="text-align: center; ">
                 <p>分享让艺术走进更多人的生活</p>
                 <hr>
             </div>
@@ -71,6 +71,7 @@
 <script>
     var Title = document.getElementsByClassName('title');
     var Description = document.getElementById('description');
+    var Recommend = document.getElementById('recommend');
     var Machine = document.getElementById('machine');
     var Report = document.getElementById('report');
     var Body = document.getElementsByTagName('body')[0];
@@ -93,48 +94,49 @@
             case 'INT':
                 Array.prototype.forEach.call(Title, item => item.innerHTML = '学问<br/>探求家');
                 Description.innerText = '懂得享受着独自一人观览时间的你，有着敏捷的洞察力，分析着不同作品中的内涵，总是渴望完全理解明白那些吸引你的作品。';
-                Link = 'https://mp.weixin.qq.com/s/4BOpklaALdOMLojz2SCMzw';
+                Recommend.innerHTML = "<a href='https://mp.weixin.qq.com/s?__biz=Mzg3NTA0NTczNg==&mid=2247496062&idx=1&sn=f1b20e43618922bdba97bcac4f7e9efe&chksm=cec5c779f9b24e6f9655e2300c333ede927d4ab0f2c9e3b2c6db40b0bc72d9f1d6d452fb7810&token=580168633&lang=zh_CN#rd' >光的研究 巴拉 | 罐头艺术<br>（点击前往）</a>";
                 break;
             case 'ENT':
                 Array.prototype.forEach.call(Title, item => item.innerHTML = '博览<br/>思想家');
                 Description.innerText = '富有好奇心的你总是有很多想法，打破成规让你收获更多乐趣，你欣赏的作品专于广度，不限单一风格，只要优秀的都喜欢。';
-                Link = 'https://mp.weixin.qq.com/s/3rRlnp4aKnNIUbCt3irMjg';
+                Recommend.innerHTML = "<a href='https://mp.weixin.qq.com/s?__biz=Mzg3NTA0NTczNg==&mid=2247496106&idx=1&sn=5070e292b03498b248d0afdeda5b03ab&chksm=cec5c7adf9b24ebbe8b2a9349df7966f0e6a6d1f1361f2dd34204760c4afbe46918052112a66&token=580168633&lang=zh_CN#rd' >日本36岁“天才”设计师，为东京奥运做设计，NIKE都排队找！<br>（点击前往）</a>";
                 break;
             case 'INF':
                 Array.prototype.forEach.call(Title, item => item.innerHTML = '神秘<br/>想像家');
                 Description.innerText = '理解力强的你容易把自己投射到作品中，找到明白你内在世界的同伴，一起探索交流作品的深层意义是一件生活中幸运的事。';
-                Link = 'https://mp.weixin.qq.com/s/JDzXpRdaW34GX_UPAwv9Uw';
+                Recommend.innerHTML = "<a href='https://mp.weixin.qq.com/s?__biz=Mzg3NTA0NTczNg==&mid=2247496782&idx=1&sn=8f17146d9dcf8eebeb6cddffbbfb9c1c&chksm=cec5c249f9b24b5f2991cb2023a83f196a239e9b7f5ac41821aa3459b5d03374d51cb00a869e&token=580168633&lang=zh_CN#rd' >二十几岁被顶级画廊签约，下一个奈良美智预定<br>（点击前往）</a>";
                 break;
             case 'ENF':
                 Array.prototype.forEach.call(Title, item => item.innerHTML = '阳光<br/>创造者');
                 Description.innerText = '你重视人内心的价值，喜欢和其他人讨论或通过艺术方式表达，那份对满载想像力作品的热衷，温暖感染身边的人。';
-                Link = 'https://mp.weixin.qq.com/s/s8h2S6bXyBaiFTtY0jxaqA';
+                Recommend.innerHTML = "<a href='https://mp.weixin.qq.com/s?__biz=Mzg3NTA0NTczNg==&mid=2247496515&idx=1&sn=6579b2b2d80104ad90055cec7dc9a27d&chksm=cec5c544f9b24c52711ed60523205937722d2969c3392f7723a7282a10ba03d0d630efb2dad1&token=580168633&lang=zh_CN#rd' >莫奈 | 阳光下爱人回头的那瞬间<br>（点击前往）</a>";
                 break;
             case 'ISJ':
                 Array.prototype.forEach.call(Title, item => item.innerHTML = '稳重<br/>鉴赏员');
                 Description.innerText = '务实的你对细腻的古典作品更有兴趣，耐心欣赏的时候，一个人安静的思考让你感到轻松稳定，令内心得到休息。';
-                Link = 'https://mp.weixin.qq.com/s/1W6qV236OpOqgxX3Do4OIw';
+                Recommend.innerHTML = "<a href='https://mp.weixin.qq.com/s?__biz=Mzg3NTA0NTczNg==&mid=2247496891&idx=1&sn=00d0d19a99c8b97d21b9feabcb82b2e3&chksm=cec5c2bcf9b24baa7e5d1175146a254acbd49a89b610eee1beb98d16728a158eafbca1b2ab5c&token=580168633&lang=zh_CN#rd' >西西弗斯<br>（点击前往）</a>";
                 break;
             case 'ESJ':
                 Array.prototype.forEach.call(Title, item => item.innerHTML = '仔细<br/>计划家');
                 Description.innerText = '你会把注意力放在细节上，感受作品当中严谨的层次，井井有条的你有感兴趣的活动时会早早计划，和小伙伴一同去参与。';
-                Link = 'https://mp.weixin.qq.com/s/qttpX0Q4gxzufm8LGPd2_Q';
+                Recommend.innerHTML = "<a href='https://mp.weixin.qq.com/s?__biz=Mzg3NTA0NTczNg==&mid=2247496347&idx=1&sn=2c5eceae482fe7f8b5bfc8434659668f&chksm=cec5c49cf9b24d8ad9f3f1291d923f38b490ae19e2c2b0262943c1fe07584eb240fdde2bfedd&token=580168633&lang=zh_CN#rd' >每次恋爱后，他都会...<br>（点击前往）</a>";
                 break;
             case 'ISP':
                 Array.prototype.forEach.call(Title, item => item.innerHTML = '创意<br/>探险家');
                 Description.innerText = '相比起抽象更关注以具象形式表现的作品，因为你喜欢探险和新事物，会尝试用全新的角度去观赏作品，寻找更多可能。';
-                Link = 'https://mp.weixin.qq.com/s/PSc-_fgyBXedpXRzEG66zw';
+                Recommend.innerHTML = "<a href='https://mp.weixin.qq.com/s?__biz=Mzg3NTA0NTczNg==&mid=2247496311&idx=1&sn=9ee4dca7d12cb4a16df53c85f521a180&chksm=cec5c470f9b24d667cf6676424138c7c3048382fa165cae46714b7fb91208fd38f9980b960f5&token=580168633&lang=zh_CN#rd' >他隐居60年，留下15145页旷世神作<br>（点击前往）</a>";
                 break;
             case 'ESP':
                 Array.prototype.forEach.call(Title, item => item.innerHTML = '天生<br/>表演者');
                 Description.innerText = '精力充沛的你有着很强的艺术鉴赏和创作力，总喜欢即兴去看作品，即使是作品延伸的周边故事，亦会感到兴味盎然。';
-                Link = 'https://mp.weixin.qq.com/s/JriPkQQwUg7N0QcPi97u2w';
+                Recommend.innerHTML = "<a href='https://mp.weixin.qq.com/s?__biz=Mzg3NTA0NTczNg==&mid=2247496135&idx=1&sn=b96bc0babdec34fc22ac43835211f3f2&chksm=cec5c7c0f9b24ed661a91d62e1f613582df977351da97e6c79384aefe10e871cf755301d944a&token=580168633&lang=zh_CN#rd' >如果世界名画里的人都是自拍控<br>（点击前往）</a>";
+
+
                 break;
             case 'extra':
                 Array.prototype.forEach.call(Title, item => item.innerHTML = '生活<br/>创作家');
                 Description.innerText = '其实艺术就在我们的生活中，每处也是你创作的舞台，只要细心看，哪里都是发挥的空间，撕开那些标签去寻找你独一无二的艺术吧！';
-                Link = 'https://mp.weixin.qq.com/s/Rb8ny8V1FgC9_mbWUWnWVQ';
-                break;
+                Recommend.innerHTML = "<a href='https://mp.weixin.qq.com/s?__biz=Mzg3NTA0NTczNg==&mid=2247496427&idx=1&sn=6dac5655334171f2b7502052416b107b&chksm=cec5c4ecf9b24dfa979b498d3c712a3d6b75dd839f3e94aff2a0060423e27d9e72a5259414d7&token=580168633&lang=zh_CN#rd' >草间弥生、大卫·霍克尼、加缪……艺术家文人们平时都爱穿什么？<br>（点击前往）</a>";
         }
     };
 
